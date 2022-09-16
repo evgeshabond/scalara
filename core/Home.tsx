@@ -1,9 +1,10 @@
 import NextHead from 'next/head'
-import * as React from 'react'
+import {useEffect} from 'react'
 import { tw } from 'twind'
 
-export const Home = () => (
-  <>
+export const Home = () => {
+
+  return (<>
     <NextHead>
       <meta charSet="UTF-8" />
       <title>Twind Next.js Example</title>
@@ -15,5 +16,5 @@ export const Home = () => (
         This is Twind!
       </h1>
     </main>
-  </>
-)
+  </>)
+  }
