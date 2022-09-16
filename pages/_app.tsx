@@ -1,7 +1,6 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import withTwindApp from '@twind/next/app'
-import twindConfig from '../twind.config'
+import twindConfig from '../scalara-ui/twind.config'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

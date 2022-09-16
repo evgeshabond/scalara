@@ -1,5 +1,6 @@
 /** @type {import('twind').Configuration} */
-export default {
+
+const config = {
   theme: {
     extend: {
       screens: {
@@ -8,3 +9,5 @@ export default {
     },
   },
 }
+
+export default config
