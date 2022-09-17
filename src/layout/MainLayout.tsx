@@ -1,4 +1,3 @@
-import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
 import React from 'react'
 import { Header } from './header/Header'
 
