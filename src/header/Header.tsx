@@ -1,7 +1,7 @@
 import { AppBar } from '@mui/material'
 import tw from 'twin.macro'
 import { Logo } from './Logo'
-import { Navigation } from './Navigation'
+import { Navigation } from './navigation/Navigation'
 
 export const Header = () => {
   const Container = tw.div`h-full flex items-center `
