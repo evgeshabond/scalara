@@ -1,14 +1,10 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { Home } from '../src/Home'
 import { MainLayout } from '../src/MainLayout'
 
 const Index: NextPage = () => {
   return (
     <MainLayout>
-      <p>CONTENT</p>
+      <p>Index page</p>
     </MainLayout>
   )
   // return (
