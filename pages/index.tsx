@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { MainLayout } from '../src/MainLayout'
+import { MainLayout } from '../src/layout/MainLayout'
 
 const Index: NextPage = () => {
   return (
