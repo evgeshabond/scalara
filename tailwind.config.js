@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     colors: {
       ...defaultColors,
-      customColor: '#f6f568',
-      ololo: '#273444'
+      grey: {
+        dark: '#212121'
+      }
     },
     // colors: {
     //   ...defaultTheme.colors,
@@ -36,7 +37,8 @@ module.exports = {
       // borderRadius: {
       //   '4xl': '2rem',
       // }
-    }
+    },
+    
   },
   plugins: [],
 }
