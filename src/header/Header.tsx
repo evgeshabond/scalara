@@ -4,14 +4,18 @@ import { Logo } from './Logo'
 import { Navigation } from './navigation/Navigation'
 
 export const Header = () => {
-  const Container = tw.div`h-full flex items-center `
+  const MainContainer = tw.div`h-full flex items-center `
+  const ActionsContainer = tw.div`h-full flex justify-between items-center flex-grow`
 
   return (
     <AppBar position="relative" tw="bg-black h-[70px]">
-      <Container>
+      <MainContainer>
         <Logo />
-        <Navigation />
-      </Container>
+        <ActionsContainer>
+          <Navigation />
+          <div>Profile</div>
+        </ActionsContainer>
+      </MainContainer>
     </AppBar>
   )
 }

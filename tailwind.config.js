@@ -10,6 +10,9 @@ module.exports = {
       ...defaultColors,
       grey: {
         dark: '#212121'
+      },
+      lila: {
+        base: '#5E44FE'
       }
     },
     // colors: {
