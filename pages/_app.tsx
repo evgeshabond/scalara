@@ -1,6 +1,4 @@
 import type { AppProps } from 'next/app'
-import withTwindApp from '@twind/next/app'
-import twindConfig from '../twind.config'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
@@ -8,4 +6,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 // export default MyApp
 
-export default withTwindApp(twindConfig, MyApp)
+export default MyApp

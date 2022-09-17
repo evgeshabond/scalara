@@ -3,9 +3,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Home } from '../src/Home'
+import { MainLayout } from '../src/MainLayout'
 
 const Index: NextPage = () => {
-  return <Home />
+  return (
+    <MainLayout>
+      <p>CONTENT</p>
+    </MainLayout>
+  )
   // return (
   //   <div className={styles.container}>
   //     <Head>
