@@ -8,7 +8,7 @@ export const MainLayout: React.FunctionComponent<MainLayoutProps> = ({
 }) => {
   return (
     <>
-      <Header></Header>
+      <Header />
       {children}
     </>
   )
