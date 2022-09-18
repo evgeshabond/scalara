@@ -14,7 +14,9 @@ const Calculator: NextPage = () => {
   return (
     <div tw="flex justify-center w-full mt-[300px]">
       <div tw="flex flex-col space-y-4 items-start w-[500px]">
-        <p>Bei welcher Berechnung wollen Sie unterstützt werden?</p>
+        <p tw="text-2xl font-bold">
+          Bei welcher Berechnung wollen Sie unterstützt werden?
+        </p>
         <CalculationSelector
           value={String(calculationId)}
           onChange={onChange}
