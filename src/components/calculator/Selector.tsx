@@ -27,6 +27,7 @@ export const Selector: React.FunctionComponent<SelectorProps> = ({
         onChange={onChange}
         label="CalculationID"
         autoWidth
+        variant="standard"
       >
         {calculations.map((calculation, index) => (
           <MenuItem value={String(index)} key={calculation.name}>
