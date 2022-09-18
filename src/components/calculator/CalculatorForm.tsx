@@ -18,8 +18,6 @@ export const CalculatorForm: React.FunctionComponent<CalculatorFormProps> = ({
   const [error, setError] = useState('')
   const [result, setResult] = useState('')
 
-  console.log({ valueA, valueB, result })
-
   const onClick = () => {
     setValueA('')
     setValueB('')
