@@ -3,9 +3,16 @@ import { Global } from '@emotion/react'
 import tw, { css, theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
 const customStyles = css({
+  html: {
+    height: '100%',
+  },
   body: {
     fontFamily: 'Open Sans',
     background: theme`colors.yellow.light`,
+    height: '100%',
+  },
+  '#__next': {
+    height: '100%',
   },
 })
 
