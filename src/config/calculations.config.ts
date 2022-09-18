@@ -30,6 +30,7 @@ export const calculations: Calculation[] = [
       const numA = Number(inputA)
       const numB = Number(inputB)
       if (numB > numA) throw 'Erste Zahl muss groesser sein als zweite'
+      if (numB === 0) throw 'Zweite Zahl muss nicht 0 sein'
       return numA % numB
     },
   },
