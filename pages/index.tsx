@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import { Button } from '../src/components/Button'
 
 const Index: NextPage = () => {
@@ -8,8 +9,10 @@ const Index: NextPage = () => {
         Start der Applikation
       </h2>
       <h1 tw="mt-[20px] text-black font-size[40px] font-bold">Willkommen</h1>
-      <p tw="mt-[50px]">Nach dem Click Sie werden weitergeleitet zum Rechner</p>
-      <Button tw="mt-[50px]">Jezt starten</Button>
+      <p tw="mt-[50px]">Sie werden nach dem Click weitergeleitet zum Rechner</p>
+      <Link href={'/calculator'} passHref>
+        <Button tw="block mt-[50px]">Jetzt starten</Button>
+      </Link>
     </div>
   )
 }
