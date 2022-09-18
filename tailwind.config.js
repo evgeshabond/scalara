@@ -12,7 +12,8 @@ module.exports = {
         dark: '#212121'
       },
       lila: {
-        base: '#5E44FE'
+        base: '#5E44FE',
+        text: '#5E44FE',
       },
       yellow: {
         light: '#F5F5F5'
