@@ -1,11 +1,27 @@
+import { createTheme, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
-import withTwindApp from '@twind/next/app'
-import twindConfig from '../twind.config'
+import { MainLayout } from '../src/layout/MainLayout'
+import GlobalStyles from '../styles/GlobalStyles'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const muiTheme = createTheme({
+    typography: {
+      fontFamily: 'Open Sans',
+    },
+  })
+
+  return (
+    <>
+      <ThemeProvider theme={muiTheme}>
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
+        <GlobalStyles />
+      </ThemeProvider>
+    </>
+  )
 }
 
 // export default MyApp
 
-export default withTwindApp(twindConfig, MyApp)
+export default MyApp
