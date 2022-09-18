@@ -5,6 +5,7 @@ import tw, { css, theme, GlobalStyles as BaseStyles } from 'twin.macro'
 const customStyles = css({
   body: {
     fontFamily: 'Open Sans',
+    background: theme`colors.yellow.light`,
   },
 })
 
