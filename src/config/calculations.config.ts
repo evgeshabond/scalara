@@ -29,7 +29,8 @@ export const calculations: Calculation[] = [
     formel: (inputA: string, inputB: string) => {
       const numA = Number(inputA)
       const numB = Number(inputB)
-      if (numB > numA) throw 'Erste Zahl muss groesser sein als zweite'
+      if (Math.abs(numB) > Math.abs(numA))
+        throw 'Absolute erste Zahl muss groesser sein als zweite'
       if (numB === 0) throw 'Zweite Zahl muss nicht 0 sein'
       return numA % numB
     },
