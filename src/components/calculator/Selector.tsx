@@ -33,9 +33,6 @@ export const Selector: React.FunctionComponent<SelectorProps> = ({
             {calculation.name}
           </MenuItem>
         ))}
-        {/* <MenuItem value={0}>{calculations[cal]}</MenuItem>
-          <MenuItem value={1}>Twenty</MenuItem>
-          <MenuItem value={2}>Thirty</MenuItem> */}
       </Select>
     </FormControl>
   )
