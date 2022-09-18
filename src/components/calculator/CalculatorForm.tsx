@@ -1,8 +1,7 @@
-import { useFormik, Formik } from 'formik'
 import { useEffect, useState } from 'react'
 import { calculations } from '../../config/calculations.config'
+import { Button } from '../core/Button'
 import { Input } from '../core/Input'
-import * as Yup from 'yup'
 
 type CalculatorFormProps = {
   calculationId: number
@@ -18,8 +17,11 @@ export const CalculatorForm: React.FunctionComponent<CalculatorFormProps> = ({
   const [valueB, setValueB] = useState<string>('')
   const [result, setResult] = useState<string>('')
 
-  // console.log(isInputBRequired)
-  console.log({ valueA, valueB, result })
+  const onClick = () => {
+    setValueA('')
+    setValueB('')
+    setResult('')
+  }
 
   useEffect(() => {
     if (valueA.length > 0 && valueB.length > 0) {
@@ -54,9 +56,10 @@ export const CalculatorForm: React.FunctionComponent<CalculatorFormProps> = ({
           variant="standard"
         />
       )}
+      <Button onClick={onClick}>Alle Felder leeren</Button>
       {Number.isFinite(result) && (
         <div>
-          <p>Result</p>
+          <p>Ergebniss</p>
           <p>{result}</p>
         </div>
       )}
