@@ -13,9 +13,12 @@ export const CalculatorForm: React.FunctionComponent<CalculatorFormProps> = ({
   const calculationConfig = calculations[calculationId]
   const isInputBRequired = calculationConfig.inputB !== undefined
 
-  const [valueA, setValueA] = useState<string>('')
-  const [valueB, setValueB] = useState<string>('')
-  const [result, setResult] = useState<string>('')
+  const [valueA, setValueA] = useState('')
+  const [valueB, setValueB] = useState('')
+  const [error, setError] = useState('')
+  const [result, setResult] = useState('')
+
+  console.log({ valueA, valueB, result })
 
   const onClick = () => {
     setValueA('')
@@ -24,18 +27,29 @@ export const CalculatorForm: React.FunctionComponent<CalculatorFormProps> = ({
   }
 
   useEffect(() => {
-    if (valueA.length > 0 && valueB.length > 0) {
-      setResult(calculationConfig.formel(valueA, valueB))
-      return
+    let result = ''
+    try {
+      setError('')
+      //  check for the case when only inputA required is in config file
+      if (isInputBRequired && (valueA.length < 1 || valueB.length < 1)) {
+        throw 'Bitte geben beide Zahlen ein'
+      }
+      result = calculationConfig.formel(valueA, valueB)
+      if (!Number.isFinite(result)) {
+        throw 'Es ist ein Fehler aufgetreren'
+      }
+    } catch (e: any) {
+      setError(e)
+    } finally {
+      setResult(result)
     }
-    setResult('')
-  }, [calculationConfig, valueA, valueB])
+  }, [calculationConfig, isInputBRequired, valueA, valueB])
 
   return (
     <div tw="flex flex-col space-y-4">
       <p>{calculationConfig.beschreibung}</p>
       <Input
-        value={String(valueA)}
+        value={valueA}
         setValue={setValueA}
         required
         error={valueA.length < 1}
@@ -46,7 +60,7 @@ export const CalculatorForm: React.FunctionComponent<CalculatorFormProps> = ({
       />
       {isInputBRequired && (
         <Input
-          value={String(valueB)}
+          value={valueB}
           setValue={setValueB}
           required={isInputBRequired}
           error={valueB.length < 1}
@@ -57,12 +71,13 @@ export const CalculatorForm: React.FunctionComponent<CalculatorFormProps> = ({
         />
       )}
       <Button onClick={onClick}>Alle Felder leeren</Button>
-      {Number.isFinite(result) && (
+      {!error && (
         <div>
           <p>Ergebniss</p>
           <p>{result}</p>
         </div>
       )}
+      {error && <div tw="text-rose-400">{error}</div>}
     </div>
   )
 }

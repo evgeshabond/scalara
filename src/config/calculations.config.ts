@@ -13,8 +13,12 @@ export const calculations: Calculation[] = [
       'Anhand von Ankathete und Gegenkathete die Länge der Hypotenuse berechnen',
     inputA: 'Ankathete',
     inputB: 'Gegemkathete',
-    formel: (inputA: number, inputB: number) =>
-      Math.sqrt(inputA ** 2 + inputB ** 2),
+    formel: (inputA: string, inputB: string) => {
+      const numA = Number(inputA)
+      const numB = Number(inputB)
+      if (numA <= 0 || numB <= 0) throw 'Beide Zahlen muessen positiv sein'
+      return Math.sqrt(numA ** 2 + numB ** 2)
+    },
   },
   {
     name: 'Ganzzahligen Rest ausgeben',
@@ -22,22 +26,23 @@ export const calculations: Calculation[] = [
       'Ausgehend von einer Zahl wird der ganzzahlige Rest einer Division berechnet.',
     inputA: 'Zahl',
     inputB: 'Divisor',
-    formel: (inputA: number, inputB: number) => inputA % inputB,
+    formel: (inputA: string, inputB: string) => {
+      const numA = Number(inputA)
+      const numB = Number(inputB)
+      if (numB > numA) throw 'Erste Zahl muss groesser sein als zweite'
+      return numA % numB
+    },
   },
   {
     name: 'Kreisumfang berechnen',
     beschreibung:
       'Mit dem Durchmesser eines Kreises kann hier der Umfang berechnet werden.',
     inputA: 'Durchmesser',
-    formel: (inputA: number) => inputA * Math.PI,
+    formel: (inputA: string) => {
+      const numA = Number(inputA)
+      if (inputA.length < 1) throw 'Bitte geben die Zahl ein'
+      if (numA <= 0) throw 'Die Zahl muss positiv sein'
+      return numA * Math.PI
+    },
   },
 ]
-
-// Kreisumfang berechnen
-// Mit dem Durchmesser eines Kreises kann hier der Umfang berechnet werden.
-// Durchmesser
-// JA
-// –
-// NEIN
-// Ergebnis =
-// Durchmesser * 3,1415
