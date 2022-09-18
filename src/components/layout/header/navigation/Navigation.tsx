@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { paths } from './navigation.config'
 import { NavigationItem } from './NavigationItem'
 

@@ -8,15 +8,14 @@ import {
 import { ReactNode } from 'react'
 import { calculations } from '../../config/calculations.config'
 
-type SelectorProps = {
+type CalculationSelectorProps = {
   onChange: (event: SelectChangeEvent<string>, child: ReactNode) => void
   value: string
 }
 
-export const Selector: React.FunctionComponent<SelectorProps> = ({
-  onChange,
-  value,
-}) => {
+export const CalculationSelector: React.FunctionComponent<
+  CalculationSelectorProps
+> = ({ onChange, value }) => {
   return (
     <FormControl>
       <InputLabel id="calculation">Berechnungart</InputLabel>
