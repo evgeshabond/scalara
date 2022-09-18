@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import tw from 'twin.macro'
 import { styled } from 'twin.macro'
-// import {styled} from '@emotion/styled'
 
 const ActiveLink = styled.a(({ $isActive }: { $isActive: boolean }) => {
   return [
