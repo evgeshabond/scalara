@@ -3,7 +3,6 @@ import { MouseEventHandler, useState } from 'react'
 
 export const Profile = () => {
   const [menuAnchorEl, setMenuAnchorEl] = useState<null | HTMLElement>(null)
-  console.log({ menuAnchorEl })
 
   const onIconButtonClick: MouseEventHandler<HTMLButtonElement> = (event) => {
     setMenuAnchorEl(event.currentTarget)
